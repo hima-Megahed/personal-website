@@ -1,0 +1,43 @@
+name: Deploying Personal Website
+
+on:
+  push:
+    branches:
+      - master
+      - gh-pages
+  pull_request:
+    branches:
+      - master
+      - gh-pages
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [12.x]
+
+    steps:
+    - name: Checkout repository
+    - uses: actions/checkout@v2
+
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+
+    - name: Install Yarn
+    - uses: Borales/actions-yarn@v2.3.0
+      with:
+        cmd: install
+
+    - name: Install Packages
+      run: yarn install
+
+    - name: Build page
+      run: yarn build
+      
+    - name: Deploy to gh-pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+        publish_dir: ./build
