@@ -1,6 +1,6 @@
 {
   "name": "personal-website",
-  "homepage": "https://hima-megahed.github.io/website/",
+  "homepage": "https://hima-megahed.github.io/personal-website",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -20,8 +20,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "prepublish": "yarn build",
-    "publish": "gh-pages -d dist",
+    "predeploy": "yarn build",
+    "deploy": "gh-pages -d build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
