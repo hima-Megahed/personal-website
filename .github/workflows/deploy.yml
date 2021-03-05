@@ -18,7 +18,7 @@ jobs:
 
     steps:
     - name: Checkout repository
-    - uses: actions/checkout@v2
+      uses: actions/checkout@v2
 
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v1
@@ -26,17 +26,17 @@ jobs:
         node-version: ${{ matrix.node-version }}
 
     - name: Install Dependencies
-    - uses: Borales/actions-yarn@v2.3.0
+      uses: Borales/actions-yarn@v2.3.0
       with:
         cmd: install # will run `yarn install` command
 
     - name: Building Dependencies
-    - uses: Borales/actions-yarn@v2.3.0
-        with:
-          cmd: build # will run `yarn build` command
+      uses: Borales/actions-yarn@v2.3.0
+      with:
+        cmd: build # will run `yarn build` command
 
     - name: Deploy to gh-pages
-    - uses: peaceiris/actions-gh-pages@v3
+      uses: peaceiris/actions-gh-pages@v3
       with:
         deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
         publish_dir: ./build
