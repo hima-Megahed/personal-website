@@ -25,17 +25,16 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
 
-    - name: Install Yarn
+    - name: Install Dependencies
     - uses: Borales/actions-yarn@v2.3.0
       with:
-        cmd: install
+        cmd: install # will run `yarn install` command
 
-    - name: Install Packages
-      run: yarn install
+    - name: Building Dependencies
+      uses: Borales/actions-yarn@v2.3.0
+        with:
+          cmd: build # will run `yarn build` command
 
-    - name: Build page
-      run: yarn build
-      
     - name: Deploy to gh-pages
       uses: peaceiris/actions-gh-pages@v3
       with:
