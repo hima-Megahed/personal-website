@@ -5,24 +5,27 @@ import reportWebVitals from "./reportWebVitals";
 import { HashRouter, Redirect, Route, Switch } from "react-router-dom";
 import LoaderSpinner from "./Components/LoaderSpinner";
 import Routes from "./Routes/RoutesConfig";
+import Layout from "./Components/Layout";
 
 ReactDOM.render(
   <React.StrictMode>
     <React.Suspense fallback={LoaderSpinner}>
       <HashRouter>
-        <Switch>
-          {Routes.map((route, index) => {
-            return (
-              <Route
-                key={route.name}
-                exact
-                path={route.path}
-                component={route.component}
-              />
-            );
-          })}
-          <Redirect from="/" to="/home" />
-        </Switch>
+        <Layout>
+          <Switch>
+            {Routes.map((route, index) => {
+              return (
+                <Route
+                  key={route.name}
+                  exact
+                  path={route.path}
+                  component={route.component}
+                />
+              );
+            })}
+            <Redirect from="/" to="/home" />
+          </Switch>
+        </Layout>
       </HashRouter>
     </React.Suspense>
   </React.StrictMode>,

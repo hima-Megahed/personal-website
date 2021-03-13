@@ -1,7 +1,8 @@
 import React from "react";
+import { Button } from "reactstrap";
 
 const Home: React.FC<{}> = () => {
-  return <h1>Home</h1>;
+  return <Button>Click</Button>;
 };
 
 export default Home;
