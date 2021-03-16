@@ -8,6 +8,31 @@ import {
   NavItem,
 } from "reactstrap";
 import { NavLink, useHistory } from "react-router-dom";
+import styled from "styled-components";
+
+const NavBarBrandStyled = styled(NavbarBrand)`
+  font-size: 3rem;
+`;
+
+const CollapseStyled = styled(Collapse)`
+  justify-content: flex-end;
+`;
+
+const NavItemStyled = styled(NavItem)`
+  padding: 0 1vw 0 1vw;
+
+  @media only screen and (max-width: 767px) {
+    padding: 1vw 0 1vw 0;
+  }
+`;
+
+const NavbarStyled = styled(Navbar)`
+  background-color: white !important;
+`;
+
+const NavStyled = styled(Nav)`
+  padding-right: 10vw;
+`;
 
 const NavigationBar: React.FC = (props) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -20,23 +45,23 @@ const NavigationBar: React.FC = (props) => {
   };
 
   return (
-    <Navbar color="light" light expand="md">
-      <NavbarBrand onClick={navigateHome}>IH</NavbarBrand>
+    <NavbarStyled color="light" light expand="md">
+      <NavBarBrandStyled onClick={navigateHome}>IM</NavBarBrandStyled>
       <NavbarToggler onClick={toggle} />
-      <Collapse isOpen={isOpen} navbar>
-        <Nav className="me-auto" navbar>
-          <NavItem>
+      <CollapseStyled isOpen={isOpen} navbar>
+        <NavStyled className="me-auto" navbar>
+          <NavItemStyled>
             <NavLink to="/home">Home</NavLink>
-          </NavItem>
-          <NavItem>
+          </NavItemStyled>
+          <NavItemStyled>
             <NavLink to="/about">About</NavLink>
-          </NavItem>
-          <NavItem>
+          </NavItemStyled>
+          <NavItemStyled>
             <NavLink to="/blogs">Blogs</NavLink>
-          </NavItem>
-        </Nav>
-      </Collapse>
-    </Navbar>
+          </NavItemStyled>
+        </NavStyled>
+      </CollapseStyled>
+    </NavbarStyled>
   );
 };
 

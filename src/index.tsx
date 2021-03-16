@@ -5,7 +5,7 @@ import reportWebVitals from "./reportWebVitals";
 import { HashRouter, Redirect, Route, Switch } from "react-router-dom";
 import LoaderSpinner from "./Components/LoaderSpinner";
 import Routes from "./Routes/RoutesConfig";
-import Layout from "./Components/Layout";
+import Layout from "./Containers/Layout";
 
 ReactDOM.render(
   <React.StrictMode>

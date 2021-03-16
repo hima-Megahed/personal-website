@@ -1,6 +1,6 @@
 import React from "react";
 import { Container } from "reactstrap";
-import NavigationBar from "./NavigationBar";
+import NavigationBar from "../Components/NavigationBar";
 
 const Layout: React.FC = (props) => {
   return (
