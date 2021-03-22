@@ -1,4 +1,4 @@
-import Home from "../Pages/Home";
+import Hero from "../Pages/Hero";
 import Blogs from "../Pages/Blogs";
 import About from "../Pages/About";
 
@@ -10,9 +10,9 @@ interface Route {
 
 const Routes: Route[] = [
     {
-        name: "Home",
-        path: "/home",
-        component: Home
+        name: "Hero",
+        path: "/hero",
+        component: Hero
     },
     {
         name: "About",

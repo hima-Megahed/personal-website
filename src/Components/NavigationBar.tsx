@@ -36,22 +36,16 @@ const NavStyled = styled(Nav)`
 
 const NavigationBar: React.FC = (props) => {
   const [isOpen, setIsOpen] = useState(false);
-  const history = useHistory();
 
   const toggle = () => setIsOpen(!isOpen);
 
-  const navigateHome = () => {
-    history.replace("/home");
-  };
-
   return (
     <NavbarStyled color="light" light expand="md">
-      <NavBarBrandStyled onClick={navigateHome}>IM</NavBarBrandStyled>
       <NavbarToggler onClick={toggle} />
       <CollapseStyled isOpen={isOpen} navbar>
         <NavStyled className="me-auto" navbar>
           <NavItemStyled>
-            <NavLink to="/home">Home</NavLink>
+            <NavLink to="/hero">Hero</NavLink>
           </NavItemStyled>
           <NavItemStyled>
             <NavLink to="/about">About</NavLink>

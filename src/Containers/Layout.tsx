@@ -1,13 +1,14 @@
 import React from "react";
-import { Container } from "reactstrap";
 import NavigationBar from "../Components/NavigationBar";
+import styled from "styled-components";
+import { Container } from "reactstrap";
 
 const Layout: React.FC = (props) => {
   return (
-    <React.Fragment>
+    <>
       <NavigationBar />
-      <Container>{props.children}</Container>
-    </React.Fragment>
+      {props.children}
+    </>
   );
 };
 
