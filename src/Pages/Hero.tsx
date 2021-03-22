@@ -32,7 +32,7 @@ const Hero: React.FC<{}> = () => {
             Hi, my name is{" "}
             <span className="text-color-main">Ibrahim Megahed</span>
           </h1>
-          <h1>
+          <h1 className="hero-title">
             I'm a full-stack software engineer crafting web an mobile apps.
           </h1>
         </Fade>
