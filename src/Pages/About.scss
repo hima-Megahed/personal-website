@@ -1,0 +1,29 @@
+#about {
+  margin-top: 3rem;
+  .title {
+    font-size: 2rem;
+    font-weight: 700;
+    text-align: center;
+
+    img {
+      width: 40px;
+      padding-bottom: 15px;
+    }
+  }
+
+  .avatar-container {
+    img {
+      display: block;
+      margin-right: auto;
+      margin-left: auto;
+      width: 50%;
+    }
+    p {
+      margin-top: 10px;
+      font-size: 12px;
+      font-weight: 100;
+      color: grey;
+      text-align: center;
+    }
+  }
+}
