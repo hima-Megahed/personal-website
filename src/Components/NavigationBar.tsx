@@ -1,18 +1,7 @@
 import React, { useState } from "react";
-import {
-  Collapse,
-  Navbar,
-  NavbarToggler,
-  NavbarBrand,
-  Nav,
-  NavItem,
-} from "reactstrap";
-import { NavLink, useHistory } from "react-router-dom";
+import { Collapse, Navbar, NavbarToggler, Nav, NavItem } from "reactstrap";
+import { NavLink } from "react-router-dom";
 import styled from "styled-components";
-
-const NavBarBrandStyled = styled(NavbarBrand)`
-  font-size: 3rem;
-`;
 
 const CollapseStyled = styled(Collapse)`
   justify-content: flex-end;
