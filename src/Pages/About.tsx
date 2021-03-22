@@ -41,6 +41,7 @@ const About: React.FC<{}> = () => {
         distance="30px"
       >
         <div className="avatar-container">
+          {/* TODO: change avatar image to graduation one while discussing the gp*/}
           <img
             className="avatar"
             src="https://scontent.fcai19-1.fna.fbcdn.net/v/t1.0-9/36304203_1133092436830202_6267488759638392832_o.jpg?_nc_cat=104&ccb=1-3&_nc_sid=ad2b24&_nc_ohc=mbcGhodgiPAAX--k4RX&_nc_ht=scontent.fcai19-1.fna&oh=966564ddb664974c8c3ec0e62ab68c1e&oe=60806E61"
