@@ -1,7 +1,9 @@
 #about {
   margin-top: 3rem;
+  padding-bottom: 3rem;
+
   .title {
-    font-size: 2rem;
+    font-size: 1.7rem;
     font-weight: 700;
     text-align: center;
 
@@ -16,7 +18,7 @@
       display: block;
       margin-right: auto;
       margin-left: auto;
-      width: 50%;
+      width: 65%;
     }
     p {
       margin-top: 10px;
@@ -24,6 +26,34 @@
       font-weight: 100;
       color: grey;
       text-align: center;
+    }
+  }
+
+  #personal-info {
+    margin: 10px 10px 0 10px;
+
+    p {
+      margin-top: 1.2rem;
+      font-size: 1rem;
+      line-height: 2rem;
+    }
+
+    a {
+      color: midnightblue;
+      font-size: 1.1rem;
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-decoration-color: lightgray;
+
+      &:hover {
+        color: navajowhite;
+        text-decoration-color: orange;
+      }
+    }
+
+    h2 {
+      border-bottom: 2px solid lightgray;
+      padding-bottom: 12px;
     }
   }
 }

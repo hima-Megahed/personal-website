@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import Fade from "react-reveal/Fade";
 import { Container } from "reactstrap";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 const Hero: React.FC<{}> = () => {
   const [isDesktop, setIsDesktop] = useState(false);
@@ -20,6 +21,10 @@ const Hero: React.FC<{}> = () => {
 
   return (
     <section id="hero" className="jumbotron">
+      <Helmet>
+        <title>Ibrahim Hasan</title>
+      </Helmet>
+
       <Container>
         <Fade
           left={isDesktop}
