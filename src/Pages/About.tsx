@@ -1,14 +1,17 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Helmet } from "react-helmet";
 // @ts-ignore
 import Fade from "react-reveal/Fade";
-import { Button, Container } from "reactstrap";
+import { Container } from "reactstrap";
+import ScrollToTop from "../Components/ScrollToTop";
 import GPTeamImage from "../images/team.jpeg";
 
 const About: React.FC<{}> = () => {
   const [isDesktop, setIsDesktop] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   const [showScrollButton, setScrollButtonVisibility] = useState(false);
+
+  const ScrollTopRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
@@ -45,12 +48,12 @@ const About: React.FC<{}> = () => {
       <Helmet>
         <title>About | Ibrahim Hasan</title>
       </Helmet>
-
+      <div ref={ScrollTopRef}></div>
       <Container>
         <Fade
           left={isDesktop}
           bottom={isMobile}
-          duration={1000}
+          duration={500}
           delay={500}
           distance="30px"
         >
@@ -65,8 +68,8 @@ const About: React.FC<{}> = () => {
         <Fade
           left={isDesktop}
           bottom={isMobile}
-          duration={1000}
-          delay={1000}
+          duration={500}
+          delay={500}
           distance="30px"
         >
           <div className="avatar-container">
@@ -82,8 +85,8 @@ const About: React.FC<{}> = () => {
           <Fade
             left={isDesktop}
             bottom={isMobile}
-            duration={1000}
-            delay={1000}
+            duration={500}
+            delay={500}
             distance="30px"
           >
             <p>
@@ -160,8 +163,8 @@ const About: React.FC<{}> = () => {
           <Fade
             left={isDesktop}
             bottom={isMobile}
-            duration={1000}
-            delay={1000}
+            duration={500}
+            delay={500}
             distance="30px"
           >
             <h2>Motivation</h2>
@@ -224,8 +227,8 @@ const About: React.FC<{}> = () => {
           <Fade
             left={isDesktop}
             bottom={isMobile}
-            duration={1000}
-            delay={1000}
+            duration={500}
+            delay={500}
             distance="30px"
           >
             <h2>Next Technology Leaders And Uadcity Scholarship</h2>
@@ -244,7 +247,7 @@ const About: React.FC<{}> = () => {
         </section>
       </Container>
 
-      {showScrollButton && <Button class="scrollToTopBtn">☝️</Button>}
+      {showScrollButton && <ScrollToTop elementRef={ScrollTopRef} />}
     </section>
   );
 };
