@@ -29,7 +29,36 @@
     }
   }
 
-  #personal-info {
+  .work-experience {
+    h2 {
+      text-align: center;
+    }
+
+    img {
+      width: 65%;
+      display: block;
+      margin-right: auto;
+      margin-left: auto;
+    }
+
+    section {
+      margin-top: 1rem;
+    }
+
+    h3 {
+      font-size: 1.5rem;
+      a {
+        font-size: 1.5rem;
+      }
+    }
+
+    .project-name {
+      font-size: 1.1rem;
+      color: #070066;
+    }
+  }
+
+  section {
     margin: 10px 10px 0 10px;
 
     p {
