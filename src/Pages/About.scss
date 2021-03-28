@@ -2,6 +2,11 @@
   margin-top: 3rem;
   padding-bottom: 3rem;
 
+  .scroll-ref {
+    position: absolute;
+    top: 0;
+  }
+
   .title {
     font-size: 1.7rem;
     font-weight: 700;

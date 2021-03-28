@@ -6,6 +6,7 @@ import { Container } from "reactstrap";
 import ScrollToTop from "../Components/ScrollToTop";
 import GPTeamImage from "../images/team.jpeg";
 import ExperienceGraphImg from "../images/Experience-Graph.png";
+import AboutTableOfContent from "../Components/AboutTableOfContent";
 
 const About: React.FC<{}> = () => {
   const [isDesktop, setIsDesktop] = useState(false);
@@ -13,6 +14,14 @@ const About: React.FC<{}> = () => {
   const [showScrollButton, setScrollButtonVisibility] = useState(false);
 
   const ScrollTopRef = useRef<HTMLDivElement>(null);
+  const IntroSectionRef = useRef<HTMLElement>(null);
+  const MotivationSectionRef = useRef<HTMLElement>(null);
+  const EducationSectionRef = useRef<HTMLElement>(null);
+  const NTLSectionRef = useRef<HTMLElement>(null);
+  const WorkExperienceSectionRef = useRef<HTMLElement>(null);
+  const OpenWaterWorkExperienceSectionRef = useRef<HTMLElement>(null);
+  const BitBangWorkExperienceSectionRef = useRef<HTMLElement>(null);
+  const quTIPWorkExperienceSectionRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
@@ -49,10 +58,10 @@ const About: React.FC<{}> = () => {
       <Helmet>
         <title>About | Ibrahim Hasan</title>
       </Helmet>
-      <div ref={ScrollTopRef}></div>
+      <div className="scroll-ref" ref={ScrollTopRef}></div>
       <Container>
         {/*Intro */}
-        <section>
+        <section ref={IntroSectionRef}>
           <Fade
             left={isDesktop}
             bottom={isMobile}
@@ -173,7 +182,7 @@ const About: React.FC<{}> = () => {
         </section>
 
         {/* Motivation */}
-        <section>
+        <section ref={MotivationSectionRef}>
           <Fade
             left={isDesktop}
             bottom={isMobile}
@@ -197,7 +206,7 @@ const About: React.FC<{}> = () => {
         </section>
 
         {/*Bachelor Degree */}
-        <section>
+        <section ref={EducationSectionRef}>
           <Fade
             left={isDesktop}
             bottom={isMobile}
@@ -253,7 +262,7 @@ const About: React.FC<{}> = () => {
         </section>
 
         {/* NTL */}
-        <section>
+        <section ref={NTLSectionRef}>
           <Fade
             left={isDesktop}
             bottom={isMobile}
@@ -277,147 +286,149 @@ const About: React.FC<{}> = () => {
         </section>
 
         {/*Work Experience */}
-        <section className="work-experience">
+        <section ref={WorkExperienceSectionRef} className="work-experience">
           <br />
           <br />
-          <Fade
-            left={isDesktop}
-            bottom={isMobile}
-            duration={500}
-            delay={500}
-            distance="30px"
-          >
-            <h2>Work Experience</h2>
-            <img src={ExperienceGraphImg} alt="My work Experience Graph" />
-            {/*OpenWater */}
-            <section>
-              <h3>
-                <a
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  href="https://www.getopenwater.com/"
-                >
-                  OpenWater
-                </a>
-                : December 2019 - Present
-              </h3>
-              <p>
-                <span className="project-name">OpenWater Chat Network</span> :
-                Fully-featured web chat business application the same as slack.
-                Used Restful api's to link the front-end to the back-end.
-                Delivered end users smoothly and mobile friendly experience. (.
-                Net Core 3, MSSQL, ReactJS, Redux, React router, hooks)
-                <br />
-                <br />
-                <span className="project-name">Decanter </span>: Custom awards
-                management application, Used Restful api's to power the back-end
-                and reactjs to cover the front-end part giving the user an
-                extraordinary experience through web and mobile devices. (. Net
-                Core 3, MSSQL, ReactJS, hooks, mobx, Styled-Components)
-                <br />
-                <br />
-                <span className="project-name">
-                  ASME [American Society Mechanical Engineering]
-                </span>
-                : An Extender web application to OpenWater awards engine
-                platform, Orchestrating different work flows and Integrating
-                different types of third-party services providers"ithenticate,
-                AlphaTrust". (. Net Core 3, MSSQL, CosmosDb, CSS, JS, JQuery,
-                Hangfire)
-                <br />
-                <br />
-                <span className="project-name">Echo Utility</span> : Custom Web
-                logger tool that intercept application network requests and logs
-                them on failure and success to Azure table. (. Net Core3, Azure
-                Tables, CSS, JS, JQuery)
-                <br />
-                <br />
-                <span className="project-name">OpenWater Islands</span>:
-                Stateless standalone azure functions that customizes the default
-                behavior of OpenWater awards engine platform i.e. Single Sign On
-                SSO, applications and invoices push back. (Azure Functions
-                "Timer Trigge
-              </p>
-            </section>
 
-            <hr />
+          <h2>Work Experience</h2>
+          <img src={ExperienceGraphImg} alt="My work Experience Graph" />
+          {/*OpenWater */}
+          <section ref={OpenWaterWorkExperienceSectionRef}>
+            <h3>
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://www.getopenwater.com/"
+              >
+                OpenWater
+              </a>
+              : December 2019 - Present
+            </h3>
+            <p>
+              <span className="project-name">OpenWater Chat Network</span> :
+              Fully-featured web chat business application the same as slack.
+              Used Restful api's to link the front-end to the back-end.
+              Delivered end users smoothly and mobile friendly experience. (.
+              Net Core 3, MSSQL, ReactJS, Redux, React router, hooks)
+              <br />
+              <br />
+              <span className="project-name">Decanter </span>: Custom awards
+              management application, Used Restful api's to power the back-end
+              and reactjs to cover the front-end part giving the user an
+              extraordinary experience through web and mobile devices. (. Net
+              Core 3, MSSQL, ReactJS, hooks, mobx, Styled-Components)
+              <br />
+              <br />
+              <span className="project-name">
+                ASME [American Society Mechanical Engineering]
+              </span>
+              : An Extender web application to OpenWater awards engine platform,
+              Orchestrating different work flows and Integrating different types
+              of third-party services providers"ithenticate, AlphaTrust". (. Net
+              Core 3, MSSQL, CosmosDb, CSS, JS, JQuery, Hangfire)
+              <br />
+              <br />
+              <span className="project-name">Echo Utility</span> : Custom Web
+              logger tool that intercept application network requests and logs
+              them on failure and success to Azure table. (. Net Core3, Azure
+              Tables, CSS, JS, JQuery)
+              <br />
+              <br />
+              <span className="project-name">OpenWater Islands</span>: Stateless
+              standalone azure functions that customizes the default behavior of
+              OpenWater awards engine platform i.e. Single Sign On SSO,
+              applications and invoices push back. (Azure Functions "Timer
+              Trigge
+            </p>
+          </section>
 
-            {/*BitBang */}
-            <section>
-              <h3>
-                <a
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  href="https://bit-bang.io/"
-                >
-                  BitBang
-                </a>
-                : March 2020 - Present "Part-Time"
-              </h3>
-              <p>
-                <span className="project-name">EatClean</span>: A healthy food
-                ordering app, Worked on converting mockups to a working app,
-                also took part in developing its back-end (.Net Core, MSSQL,
-                React Native, Redux, hooks, RN Navigation)
-                <br />
-                <br />
-                <span className="project-name">Callture Extension</span>: Worked
-                on a project integrating a various number of CMS providers i.e.
-                "Salesforce, Zoho, Zoho PhoneBridge, Microsoft Dynamics 365,
-                etc..." (.Net MVC 5, Chrome Extension)
-                <br />
-                <br />
-                <span className="project-name">Jitsi</span>: A VOIP open-source
-                application, Worked on customizing Jitsi on both platforms (Ios,
-                Android) and submitting them to the play store and apple store.
-                <br />
-                <br />
-                <span className="project-name">Linphone</span>: A VOIP
-                open-source application, worked on customizing the Android app
-                and adding Push Notifications to the application. (. Net MVC 5,
-                Android "Java")
-              </p>
-            </section>
+          <hr />
 
-            <hr />
+          {/*BitBang */}
+          <section ref={BitBangWorkExperienceSectionRef}>
+            <h3>
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://bit-bang.io/"
+              >
+                BitBang
+              </a>
+              : March 2020 - Present "Part-Time"
+            </h3>
+            <p>
+              <span className="project-name">EatClean</span>: A healthy food
+              ordering app, Worked on converting mockups to a working app, also
+              took part in developing its back-end (.Net Core, MSSQL, React
+              Native, Redux, hooks, RN Navigation)
+              <br />
+              <br />
+              <span className="project-name">Callture Extension</span>: Worked
+              on a project integrating a various number of CMS providers i.e.
+              "Salesforce, Zoho, Zoho PhoneBridge, Microsoft Dynamics 365,
+              etc..." (.Net MVC 5, Chrome Extension)
+              <br />
+              <br />
+              <span className="project-name">Jitsi</span>: A VOIP open-source
+              application, Worked on customizing Jitsi on both platforms (Ios,
+              Android) and submitting them to the play store and apple store.
+              <br />
+              <br />
+              <span className="project-name">Linphone</span>: A VOIP open-source
+              application, worked on customizing the Android app and adding Push
+              Notifications to the application. (. Net MVC 5, Android "Java")
+            </p>
+          </section>
 
-            {/*quTIP */}
-            <section>
-              <h3>
-                <a
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  href="https://www.qutip.com/"
-                >
-                  quTIP
-                </a>
-                : July 2018 - November 2018
-              </h3>
-              <p>
-                <span className="project-name">TOTAL</span>: Collaborated with
-                quTIP backend team to develop new features, refactor some chunks
-                of code and unit test our functionality. (.Net MVC 5 - Microsoft
-                SQL Server - Kendo UI - Unit Testing - JS - jQuery - Glimpse
-                performance profiling)
-                <br />
-                <br />
-                <span className="project-name">SalesToolMini</span>: Developed
-                salesToolMini from the frontend to the backend passing by user
-                authentication and data validation on both client and server
-                sides then bulk inserting the data into the database. (.Net MVC
-                5 - Entity Framework 6 - Microsoft SQL Server)
-                <br />
-                <br />
-                <span className="project-name">Research and Development</span>
-                Assigned to the R&D team to get state-of-the-art technologies.
-                (i.e. Cloud Computing, Single & Multi-tenant apps)
-              </p>
-            </section>
-          </Fade>
+          <hr />
+
+          {/*quTIP */}
+          <section ref={quTIPWorkExperienceSectionRef}>
+            <h3>
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://www.qutip.com/"
+              >
+                quTIP
+              </a>
+              : July 2018 - November 2018
+            </h3>
+            <p>
+              <span className="project-name">TOTAL</span>: Collaborated with
+              quTIP backend team to develop new features, refactor some chunks
+              of code and unit test our functionality. (.Net MVC 5 - Microsoft
+              SQL Server - Kendo UI - Unit Testing - JS - jQuery - Glimpse
+              performance profiling)
+              <br />
+              <br />
+              <span className="project-name">SalesToolMini</span>: Developed
+              salesToolMini from the frontend to the backend passing by user
+              authentication and data validation on both client and server sides
+              then bulk inserting the data into the database. (.Net MVC 5 -
+              Entity Framework 6 - Microsoft SQL Server)
+              <br />
+              <br />
+              <span className="project-name">Research and Development</span>
+              Assigned to the R&D team to get state-of-the-art technologies.
+              (i.e. Cloud Computing, Single & Multi-tenant apps)
+            </p>
+          </section>
         </section>
       </Container>
 
       {showScrollButton && <ScrollToTop elementRef={ScrollTopRef} />}
+
+      <AboutTableOfContent
+        introSectionRef={IntroSectionRef}
+        motivationSectionRef={MotivationSectionRef}
+        educationSectionRef={EducationSectionRef}
+        ntlSectionRef={NTLSectionRef}
+        workExperienceSectionRef={WorkExperienceSectionRef}
+        openWaterWorkExperienceSectionRef={OpenWaterWorkExperienceSectionRef}
+        bitBangWorkExperienceSectionRef={BitBangWorkExperienceSectionRef}
+        quTIPWorkExperienceSectionRef={quTIPWorkExperienceSectionRef}
+      />
     </section>
   );
 };

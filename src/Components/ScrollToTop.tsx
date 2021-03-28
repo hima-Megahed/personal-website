@@ -20,7 +20,7 @@ const ScrollToTop: React.FC<ScrollToTopProps> = (props) => {
     <div id="ScrollToTop">
       <div className="back-to-top-wrapper">
         <a
-          href="#root"
+          href="#!"
           className="back-to-top-link"
           aria-label="Scroll to Top"
           onClick={OnScrollToTopClicked}
