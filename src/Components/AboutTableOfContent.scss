@@ -14,12 +14,12 @@
 
   li {
     margin-left: 1rem;
+  }
 
-    &:active {
-      a {
-        color: #333;
-        font-weight: 500;
-      }
+  .active {
+    a {
+      color: #333;
+      font-weight: 500;
     }
   }
 
@@ -31,8 +31,7 @@
     transition: all 50ms ease-in-out; /* 💡 This small transition makes setting of the active state smooth */
     font-size: 1rem;
 
-    &:hover,
-    &:focus {
+    &:hover {
       color: #666;
     }
   }

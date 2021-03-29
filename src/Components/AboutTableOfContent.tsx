@@ -1,4 +1,4 @@
-import React, { MouseEvent, RefObject } from "react";
+import React, { MouseEvent, RefObject, useEffect, useState } from "react";
 
 interface AboutTableOfContentProps {
   introSectionRef: RefObject<HTMLElement>;
@@ -21,8 +21,47 @@ const AboutTableOfContent: React.FC<AboutTableOfContentProps> = (props) => {
   const BitBangHref = "bit-bang";
   const QuTIPHref = "quTIP";
 
+  const [activeLiItem, SetActiveLiItem] = useState(IntroductionHref);
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  const handleScroll = () => {
+    const winScroll =
+      document.body.scrollTop || document.documentElement.scrollTop;
+
+    const height =
+      document.documentElement.scrollHeight -
+      document.documentElement.clientHeight;
+
+    const scrolled = (winScroll / height) * 100;
+
+    if (scrolled > 90) {
+      SetActiveLiItem(QuTIPHref);
+    } else if (scrolled > 87) {
+      SetActiveLiItem(BitBangHref);
+    } else if (scrolled > 70) {
+      SetActiveLiItem(OpenWaterHref);
+    } else if (scrolled > 54) {
+      SetActiveLiItem(WorkExperienceHref);
+    } else if (scrolled > 47) {
+      SetActiveLiItem(NTLHref);
+    } else if (scrolled > 32) {
+      SetActiveLiItem(EducationHref);
+    } else if (scrolled > 28) {
+      SetActiveLiItem(MotivationHref);
+    } else {
+      SetActiveLiItem(IntroductionHref);
+    }
+  };
+
   const OnScrollToSectionClicked = (e: MouseEvent, targetSection: String) => {
     e.preventDefault();
+    SetActiveLiItem("");
 
     if (
       targetSection.includes(IntroductionHref) &&
@@ -105,7 +144,9 @@ const AboutTableOfContent: React.FC<AboutTableOfContentProps> = (props) => {
   return (
     <nav className="section-nav">
       <ol>
-        <li>
+        <li
+          className={activeLiItem === IntroductionHref ? "active" : undefined}
+        >
           <a
             href={IntroductionHref}
             onClick={(e) => OnScrollToSectionClicked(e, e.currentTarget.href)}
@@ -113,7 +154,7 @@ const AboutTableOfContent: React.FC<AboutTableOfContentProps> = (props) => {
             Introduction
           </a>
         </li>
-        <li>
+        <li className={activeLiItem === MotivationHref ? "active" : undefined}>
           <a
             href={MotivationHref}
             onClick={(e) => OnScrollToSectionClicked(e, e.currentTarget.href)}
@@ -121,7 +162,7 @@ const AboutTableOfContent: React.FC<AboutTableOfContentProps> = (props) => {
             Motivation
           </a>
         </li>
-        <li>
+        <li className={activeLiItem === EducationHref ? "active" : undefined}>
           <a
             href={EducationHref}
             onClick={(e) => OnScrollToSectionClicked(e, e.currentTarget.href)}
@@ -129,7 +170,7 @@ const AboutTableOfContent: React.FC<AboutTableOfContentProps> = (props) => {
             Education
           </a>
         </li>
-        <li>
+        <li className={activeLiItem === NTLHref ? "active" : undefined}>
           <a
             href={NTLHref}
             onClick={(e) => OnScrollToSectionClicked(e, e.currentTarget.href)}
@@ -137,7 +178,9 @@ const AboutTableOfContent: React.FC<AboutTableOfContentProps> = (props) => {
             NTL
           </a>
         </li>
-        <li>
+        <li
+          className={activeLiItem === WorkExperienceHref ? "active" : undefined}
+        >
           <a
             href={WorkExperienceHref}
             onClick={(e) => OnScrollToSectionClicked(e, e.currentTarget.href)}
@@ -145,7 +188,9 @@ const AboutTableOfContent: React.FC<AboutTableOfContentProps> = (props) => {
             Work Experience
           </a>
           <ul>
-            <li className="">
+            <li
+              className={activeLiItem === OpenWaterHref ? "active" : undefined}
+            >
               <a
                 href={OpenWaterHref}
                 onClick={(e) =>
@@ -155,7 +200,7 @@ const AboutTableOfContent: React.FC<AboutTableOfContentProps> = (props) => {
                 OpenWater
               </a>
             </li>
-            <li className="">
+            <li className={activeLiItem === BitBangHref ? "active" : undefined}>
               <a
                 href={BitBangHref}
                 onClick={(e) =>
@@ -165,7 +210,7 @@ const AboutTableOfContent: React.FC<AboutTableOfContentProps> = (props) => {
                 BitBang
               </a>
             </li>
-            <li className="">
+            <li className={activeLiItem === QuTIPHref ? "active" : undefined}>
               <a
                 href={QuTIPHref}
                 onClick={(e) =>
