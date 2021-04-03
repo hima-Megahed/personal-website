@@ -215,48 +215,44 @@ const About: React.FC<{}> = () => {
             distance="30px"
           >
             <h2>My Bachelor’s Degree Final Project</h2>
-            <div className="row">
-              <div className="col-10 col-md-10">
-                <p>
-                  3 years ago, It was my first year at Ain-Shams University
-                  Faculty of Computer and Information Science. I heard about{" "}
-                  <a href="https://icpc.global/">ACM ICPC</a> and it was very
-                  interesting for me, So I started my training program with my
-                  colleagues and a mentor. Over the time I studied Machine
-                  learning and AI any by a short time I was completely obsessed
-                  with them. So I thought to craft my Graduation Project around
-                  ML and AI.
-                  <br />
-                  <br />
-                  We met and brainstormed to get an idea, I was inspired by
-                  Shazam and how it works. Then we came to an idea, Why we don't
-                  make an application like shazam but especially created for
-                  Quran and use machine learning to remove limitations and
-                  restrictions to a specific voice.
-                </p>
-                <p>
-                  We started researching for 3 months then we made our decision
-                  and put a plan for the upcoming 6 months. every one of us was
-                  responsible for a specific part. we had the core engine team,
-                  mobile team and UI/UX team. I should say it was very hrd at
-                  the beginning as no one worked on this field before, we will
-                  work with signals and ML plus we wanted to provide seamless
-                  experience through providing a mobile app that anybody can
-                  use, and we were restricted by a time frame. But eventually we
-                  made it 💪 and we got <strong>A+</strong> in the project. We
-                  crafted a mobile app that can work online and offline just
-                  pronounce word or two from the verse you want and it will be
-                  there for you. We named it{" "}
-                  <a href="https://github.com/hima-Megahed/Qur-an-Surah-Identifier">
-                    Quran Surah Identifier
-                  </a>
-                  .
-                </p>
-              </div>
-              <div className="col-2 col-md-2">
-                <img src="https://j.gifs.com/gZXzzl.gif" alt="demo for gp" />
-              </div>
-            </div>
+            <p>
+              3 years ago, It was my first year at Ain-Shams University Faculty
+              of Computer and Information Science. I heard about{" "}
+              <a href="https://icpc.global/">ACM ICPC</a> and it was very
+              interesting for me, So I started my training program with my
+              colleagues and a mentor. Over the time I studied Machine learning
+              and AI any by a short time I was completely obsessed with them. So
+              I thought to craft my Graduation Project around ML and AI.
+              <br />
+              <br />
+              We met and brainstormed to get an idea, I was inspired by Shazam
+              and how it works. Then we came to an idea, Why we don't make an
+              application like shazam but especially created for Quran and use
+              machine learning to remove limitations and restrictions to a
+              specific voice.
+            </p>
+            <p>
+              We started researching for 3 months then we made our decision and
+              put a plan for the upcoming 6 months. every one of us was
+              responsible for a specific part. we had the core engine team,
+              mobile team and UI/UX team. I should say it was very hrd at the
+              beginning as no one worked on this field before, we will work with
+              signals and ML plus we wanted to provide seamless experience
+              through providing a mobile app that anybody can use, and we were
+              restricted by a time frame. But eventually we made it 💪 and we
+              got <strong>A+</strong> in the project. We crafted a mobile app
+              that can work online and offline just pronounce word or two from
+              the verse you want and it will be there for you. We named it{" "}
+              <a href="https://github.com/hima-Megahed/Qur-an-Surah-Identifier">
+                Quran Surah Identifier
+              </a>
+              .
+            </p>
+            <img
+              className="gp-demo-gif"
+              src="https://j.gifs.com/gZXzzl.gif"
+              alt="demo for gp"
+            />
             <br />
           </Fade>
         </section>
@@ -360,7 +356,19 @@ const About: React.FC<{}> = () => {
               <span className="project-name">EatClean</span>: A healthy food
               ordering app, Worked on converting mockups to a working app, also
               took part in developing its back-end (.Net Core, MSSQL, React
-              Native, Redux, hooks, RN Navigation)
+              Native, Redux, hooks, RN Navigation){" "}
+              <a
+                target="_blank"
+                rel="noreferrer noopener"
+                href="https://play.google.com/store/apps/details?id=com.bitbang.eatclean"
+              >
+                See on Google Play
+                <img
+                  className="google-play-icon"
+                  src="https://www.gstatic.com/android/market_images/web/favicon_v2.ico"
+                  alt="Google play icon"
+                />
+              </a>
               <br />
               <br />
               <span className="project-name">Callture Extension</span>: Worked

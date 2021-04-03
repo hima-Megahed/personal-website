@@ -1,5 +1,5 @@
 #hero {
-  height: 90vh;
+  height: 88vh;
   display: flex;
   padding-left: 0 !important;
   align-items: center;
@@ -18,7 +18,7 @@
   z-index: -1;
 
   @include respond(phone) {
-    padding: 0rem $default-font-size;
+    padding: 0 0;
   }
 
   .hero-title {
@@ -35,7 +35,7 @@
       text-align: center;
     }
     @include respond(phone) {
-      font-size: 2rem;
+      font-size: 1.6rem;
       line-height: 1.5;
     }
     @include respond(phone-xs) {

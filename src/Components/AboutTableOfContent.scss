@@ -2,8 +2,12 @@
   padding-left: 0;
   border-left: 1px solid #efefef;
   position: fixed;
-  top: 10rem;
+  top: 15rem;
   right: 2%;
+
+  @include respond(phone) {
+    display: none;
+  }
 
   ul,
   ol {

@@ -10,8 +10,8 @@ interface Route {
 
 const Routes: Route[] = [
     {
-        name: "Hero",
-        path: "/hero",
+        name: "Default",
+        path: "/",
         component: Hero
     },
     {

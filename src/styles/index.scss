@@ -11,6 +11,7 @@
 @import "../Pages/About";
 @import "../Components/ScrollToTop";
 @import "../Components/AboutTableOfContent";
+@import "../Components/NavigationBar";
 
 body {
   margin: 0;
@@ -47,4 +48,8 @@ body,
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+.disable-scroll {
+  overflow-y: hidden;
 }

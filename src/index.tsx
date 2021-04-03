@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./styles/index.scss";
 import reportWebVitals from "./reportWebVitals";
-import { HashRouter, Redirect, Route, Switch } from "react-router-dom";
+import { HashRouter, Route, Switch } from "react-router-dom";
 import LoaderSpinner from "./Components/LoaderSpinner";
 import Routes from "./Routes/RoutesConfig";
 import Layout from "./Containers/Layout";
@@ -23,7 +23,6 @@ ReactDOM.render(
                 />
               );
             })}
-            <Redirect from="/" to="/hero" />
           </Switch>
         </Layout>
       </HashRouter>

@@ -2,6 +2,12 @@
   margin-top: 3rem;
   padding-bottom: 3rem;
 
+  .google-play-icon {
+    width: 1.2rem !important;
+    display: inline-block !important;
+    margin-left: 2px !important;
+  }
+
   .scroll-ref {
     position: absolute;
     top: 0;
@@ -62,6 +68,11 @@
       font-size: 1.1rem;
       color: #070066;
     }
+  }
+
+  .gp-demo-gif {
+    margin: auto;
+    display: block;
   }
 
   section {

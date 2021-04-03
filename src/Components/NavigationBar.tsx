@@ -1,50 +1,59 @@
 import React, { useState } from "react";
-import { Collapse, Navbar, NavbarToggler, Nav, NavItem } from "reactstrap";
-import { NavLink } from "react-router-dom";
-import styled from "styled-components";
+import { Link } from "react-router-dom";
 
-const CollapseStyled = styled(Collapse)`
-  justify-content: flex-end;
-`;
+import Avatar from "../images/circle-cropped.png";
 
-const NavItemStyled = styled(NavItem)`
-  padding: 0 1vw 0 1vw;
+const NavigationBar: React.FC = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  @media only screen and (max-width: 767px) {
-    padding: 1vw 0 1vw 0;
-  }
-`;
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
 
-const NavbarStyled = styled(Navbar)`
-  background-color: white !important;
-`;
+    if (!isMenuOpen) {
+      let root = document.getElementById("root");
+      root?.classList.add("disable-scroll");
+    }
 
-const NavStyled = styled(Nav)`
-  padding-right: 10vw;
-`;
-
-const NavigationBar: React.FC = (props) => {
-  const [isOpen, setIsOpen] = useState(false);
-
-  const toggle = () => setIsOpen(!isOpen);
+    if (isMenuOpen) {
+      let root = document.getElementById("root");
+      root?.classList.remove("disable-scroll");
+    }
+  };
 
   return (
-    <NavbarStyled color="light" light expand="md">
-      <NavbarToggler onClick={toggle} />
-      <CollapseStyled isOpen={isOpen} navbar>
-        <NavStyled className="me-auto" navbar>
-          <NavItemStyled>
-            <NavLink to="/hero">Hero</NavLink>
-          </NavItemStyled>
-          <NavItemStyled>
-            <NavLink to="/about">About</NavLink>
-          </NavItemStyled>
-          <NavItemStyled>
-            <NavLink to="/blogs">Blogs</NavLink>
-          </NavItemStyled>
-        </NavStyled>
-      </CollapseStyled>
-    </NavbarStyled>
+    <div className="header-area">
+      <div className="navbar-area">
+        <nav className="site-navbar">
+          <Link to="/" className="site-logo">
+            <img src={Avatar} alt="avatar" />
+          </Link>
+          <ul className={isMenuOpen ? "open" : undefined}>
+            <li>
+              <Link onClick={toggleMenu} to="/">
+                home
+              </Link>
+            </li>
+            <li>
+              <Link onClick={toggleMenu} to="/about">
+                about
+              </Link>
+            </li>
+            <li>
+              <Link onClick={toggleMenu} to="#">
+                contact
+              </Link>
+            </li>
+          </ul>
+
+          <button
+            onClick={toggleMenu}
+            className={`nav-toggler ${isMenuOpen ? "toggler-open" : undefined}`}
+          >
+            <span></span>
+          </button>
+        </nav>
+      </div>
+    </div>
   );
 };
 
