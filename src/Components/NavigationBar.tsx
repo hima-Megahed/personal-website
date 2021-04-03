@@ -38,11 +38,6 @@ const NavigationBar: React.FC = () => {
                 about
               </Link>
             </li>
-            <li>
-              <Link onClick={toggleMenu} to="#">
-                contact
-              </Link>
-            </li>
           </ul>
 
           <button
